@@ -14,10 +14,11 @@ class ViewSplash extends StatefulWidget {
 
 class _SplashState extends State<ViewSplash> {
   Future<bool> checkLogin() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     bool isLogin = prefs.getBool("isLogin") ?? false;
     print("isLogin : $isLogin");
-    return isLogin;
+    // return isLogin;
+    return false;
   }
 
 
