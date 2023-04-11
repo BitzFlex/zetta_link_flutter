@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import "package:zetta_link/view/list.dart";
-import "package:zetta_link/view/login.dart";
+import "package:zetta_link/view/content_list_view.dart";
+import "package:zetta_link/view/login_view.dart";
 
 
-class ViewSplash extends StatefulWidget {
-  const ViewSplash({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<ViewSplash> createState() => _SplashState();
+  State<SplashView> createState() => _SplashState();
 }
 
-class _SplashState extends State<ViewSplash> {
+class _SplashState extends State<SplashView> {
   Future<bool> checkLogin() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool isLogin = prefs.getBool("isLogin") ?? false;
@@ -25,10 +25,10 @@ class _SplashState extends State<ViewSplash> {
   void moveScreen() async {
     await checkLogin().then((isLogin) {
       if (isLogin) {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ViewList() ));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ContentListView() ));
       } else
       {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ViewLogin() ));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ContentListView() ));
       }
     });
   }
@@ -37,7 +37,6 @@ class _SplashState extends State<ViewSplash> {
 
   @override
   void initState() {
-    // TODO: implement initState
 
     print("init state");
     Timer(const Duration(seconds: 2), 

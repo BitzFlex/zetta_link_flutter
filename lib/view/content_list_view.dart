@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class ViewList extends StatelessWidget {
-  const ViewList({super.key});
+class ContentListView extends StatelessWidget {
+  const ContentListView({super.key});
 
   @override
   Widget build(BuildContext contest) {

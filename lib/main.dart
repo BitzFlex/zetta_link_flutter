@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zetta_link/view/splash.dart';
+import 'package:zetta_link/view/splash_view.dart';
+import 'package:zetta_link/view/login_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const MyHomePage(title: 'Zetta Link Things'),
-      home: const ViewSplash()
+      // home: const SplashView()
+      home: const LoginView()
 
     );
   }
